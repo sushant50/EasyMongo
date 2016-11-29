@@ -1,0 +1,33 @@
+{
+  "name": "easymongo",
+  "version": "0.0.1",
+  "description": "A node js wrapper for Mongo Db for easy access and database manipulation.",
+  "main": "easymongo.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sushant50/EasyMongo.git"
+  },
+  "keywords": [
+    "mongo",
+    "mongodb",
+    "easymongo"
+  ],
+  "author": "Sushant Dahiya <sushant50.dahiya@gmail.com> (https://blog.doitloud.in)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sushant50/EasyMongo/issues"
+  },
+  "homepage": "https://github.com/sushant50/EasyMongo#readme",
+ "dependencies": {
+    "mongodb": "^1.4.20",
+    "lodash": "^3.1.0",
+ "winston": "~0.7.3",
+    "winston-mongodb": "~0.5.1",
+    "moment": "~2.11.1"
+
+    
+}
+}
