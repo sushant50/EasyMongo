@@ -1,0 +1,61 @@
+[DEFAULT]
+
+cert_file = /etc/swift/cert.crt
+
+key_file = /etc/swift/cert.key
+
+bind_port = 8080
+
+workers = 8
+
+user = swift
+
+log_facility = LOG_LOCAL0
+
+allow_account_management = true
+
+[pipeline:main]
+
+pipeline = healthcheck cache swauth proxy-server
+
+[app:proxy-server]
+
+use = egg:swift#proxy
+
+allow_account_management = true
+
+account_autocreate = true
+
+log_facility = LOG_LOCAL0
+
+log_headers = true
+
+log_level =DEBUG
+
+[filter:swauth]
+
+use = egg:swauth#swauth
+
+
+default_swift_cluster = local#https://10.38.10.127:8080/v1
+
+
+super_admin_key = swauthkey
+
+log_facility = LOG_LOCAL1
+
+log_headers = true
+
+log_level =DEBUG
+
+allow_account_management = true
+
+[filter:healthcheck]
+
+use = egg:swift#healthcheck
+
+[filter:cache]
+
+use = egg:swift#memcache
+
+memcache_servers = 10.38.10.127:11211 
